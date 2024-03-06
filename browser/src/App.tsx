@@ -31,10 +31,10 @@ async function handleDownload({
 
     URL.revokeObjectURL(href);
     a.remove();
-
-    callbacks?.end?.();
   } catch (err) {
     console.error(err);
+  } finally {
+    callbacks?.end?.();
   }
 }
 
